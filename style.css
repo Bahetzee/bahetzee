@@ -1,0 +1,229 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #0f0f0f, #61787a);
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    background: #8f8144;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #080801; /* Gold */
+    margin: 2px 0;
+    transition: 0.3s;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu li a {
+    color: #f3f71c;
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    transition: color 0.1s;
+}
+
+.nav-menu li a:hover {
+    color: #fff;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px 50px;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #d4af37;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #d4af37;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+/* Grid Section */
+.grid-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 50px 20px;
+}
+
+.grid-item {
+    background: linear-gradient(135deg, #3a5364, #494028);
+    padding: 20px;
+    text-align: center;
+    color: #d4af37;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.grid-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.grid-image {
+    width: 90%;
+    height: 400px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    transition: transform 0.3s ease; /* Smooth transition for hover */
+}
+
+.grid-image:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.grid-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #d4af37;
+}
+
+.grid-item p {
+    font-size: 1rem;
+    color: #dbcb36;
+}
+.grid-item.animate {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    
+}
+
+/* Footer */
+footer {
+    padding: 50px 20px;
+    text-align: center;
+    background: #1a1a1a;
+}
+
+.social-links {
+    margin-bottom: 30px;
+}
+
+.social-icon {
+    color: #d4af37;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2rem;
+}
+
+.social-icon:hover {
+    color: #fff;
+}
+
+.inquiry-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.inquiry-form h3 {
+    color: #f5f5f4;
+    margin-bottom: 20px;
+}
+
+.inquiry-form input,
+.inquiry-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #2b2b2b;
+    border: 1px solid #d4af37;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.inquiry-form button {
+    background: #d4af37;
+    color: #1a1a1a;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.inquiry-form button:hover {
+    background: #fff;
+}
+
+/* Style all sections except the last one to avoid a line before the footer */
+section:not(:last-child) {
+    border-bottom: 4px solid #333; /* Dark line, adjust color/thickness as needed */
+    padding-bottom: 40px; /* Space below content */
+    margin-bottom: 10px; /* Space below the line */
+}
+
+/* Optional: Ensure footer doesn't get a border */
+footer {
+    border: none;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 200px;
+        background: #1b1b1a;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li a {
+        padding: 15px;
+    }
+}
